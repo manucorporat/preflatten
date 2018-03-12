@@ -1,0 +1,62 @@
+{
+  "name": "typescript-lib",
+  "version": "0.0.1",
+  "description": "Typescript library starter",
+  "author": "Manu Mtz.-Almeida",
+  "license": "MIT",
+  "keywords": [
+    "typescript",
+    "rollup",
+    "starter"
+  ],
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  "browser": "dist/umd/index.js",
+  "typings": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "npm run clean && tsc --project && rollup -c",
+    "dev": "npm run clean && npm link && tsc --project . -w --outDir ./dist/es",
+    "watch": "tsc -w",
+    "test": "jest",
+    "deploy": "np",
+    "lint": "tslint --project . --type-check src/**/*.ts",
+    "version": "npm run build"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.2.0",
+    "@types/node": "^9.3.0",
+    "@types/puppeteer": "^1.1.0",
+    "clean-css": "^4.1.11",
+    "np": "^2.20.1",
+    "rollup": "^0.56.5",
+    "rollup-plugin-node-resolve": "^3.2.0",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "ts-jest": "^22.4.1",
+    "tslint": "^5.9.1",
+    "tslint-ionic-rules": "0.0.14",
+    "typescript": "^2.7.2"
+  },
+  "dependencies": {
+    "@types/clean-css": "^3.4.30",
+    "jest": "^22.1.4",
+    "puppeteer": "^1.1.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  }
+}
